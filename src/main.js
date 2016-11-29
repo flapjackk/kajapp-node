@@ -1,1 +1,5 @@
+import ReactDOM from 'react-dom';
+import React from 'react';
 import App from './react-components/app.jsx';
+
+ReactDOM.render(<App/>, document.getElementById('root'));

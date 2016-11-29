@@ -1,17 +1,30 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Sidebar from './sidebar.jsx';
 import Content from './content.jsx';
 
 class App extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.state = {restaurants : []};
+    }
+
+    loadRestaurants(){
+        this.setState({restaurants: ['maki', 'fagyi', 'mari']});
+    }
+
+    componentDidMount(){
+        setTimeout(() => this.loadRestaurants(), 10000);
+    }
+
     render(){
         return (
             <div>
                 <Sidebar/>
-                <Content/>
+                <Content restaurants={this.state.restaurants} />
             </div>
-        )
+        );
     }
 }
 
-ReactDOM.render(<App/>, document.getElementById('root'));
+export default App;
