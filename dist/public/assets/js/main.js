@@ -28,11 +28,11 @@
 			if (skel.canUse('transition'))
 				$body.addClass('is-loading');
 
-			$window.on('load', function() {
+			/*$window.on('load', function() {
 				window.setTimeout(function() {
 					$body.removeClass('is-loading');
-				}, 100);
-			});
+				}, 10000);
+			});*/
 
 		// Forms.
 

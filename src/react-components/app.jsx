@@ -10,17 +10,23 @@ class App extends React.Component {
     }
 
     loadRestaurants(){
-        this.setState({restaurants: ['maki', 'fagyi', 'mari']});
+        this.setState({restaurants: ['Club', 'Veranda', 'Kantin','Intenzo']});
+        setTimeout(() => {
+            document.body.classList.remove('is-loading');
+        },100);
+        
     }
 
     componentDidMount(){
-        setTimeout(() => this.loadRestaurants(), 10000);
+        setTimeout(() => {
+            this.loadRestaurants()
+        },500);
     }
 
     render(){
         return (
             <div>
-                <Sidebar/>
+                <Sidebar items={this.state.restaurants} />
                 <Content restaurants={this.state.restaurants} />
             </div>
         );

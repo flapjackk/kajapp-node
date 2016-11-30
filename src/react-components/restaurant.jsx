@@ -6,7 +6,7 @@ class Restaurant extends React.Component {
         return (
             <section id="club" className="wrapper style2 fade-up">
                 <div className="inner">
-                <h2>Club</h2>
+                <h2>{this.props.data}</h2>
                     <div id="club_holder"></div>
                     <div id="hello"></div>
                     <ul className="actions">
